@@ -9,6 +9,9 @@ echo "  🔐 CRYPTOGRAPHY SUITE - LAUNCHER"
 echo "========================================================================"
 echo ""
 
+# Set Java Path for Homebrew OpenJDK
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
 # Check if Java is installed
 if ! command -v java &> /dev/null; then
     echo "❌ ERROR: Java is not installed or not in PATH"
