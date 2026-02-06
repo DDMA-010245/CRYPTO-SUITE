@@ -48,7 +48,7 @@ public class CryptoApp extends JFrame {
         sidebarPanel.add(appTitle);
         sidebarPanel.add(Box.createRigidArea(new Dimension(0, 5)));
 
-        JLabel versionLabel = new JLabel("v2.2 Ultimate");
+        JLabel versionLabel = new JLabel("");
         versionLabel.setForeground(Theme.ACCENT_COLOR);
         versionLabel.setFont(new Font("Segoe UI", Font.BOLD, 12));
         versionLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
