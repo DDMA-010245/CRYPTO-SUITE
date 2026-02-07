@@ -2,7 +2,6 @@
 
 A comprehensive Java Swing application featuring **200+ cryptographic algorithms** with a modern, cyberpunk-themed user interface.
 
-![Version](https://img.shields.io/badge/version-2.2-blue)
 ![Java](https://img.shields.io/badge/java-8%2B-orange)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
