@@ -22,7 +22,7 @@ public class HillCipherPanel extends BaseCipherPanel {
         JPanel inputPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 0));
         inputPanel.setOpaque(false);
         inputPanel.add(new JLabel("<html><font color='white'>Key (4):</font></html>"));
-        keyField = createTextField("GYBN");
+        keyField = createTextField("HILL");
         keyField.setPreferredSize(new Dimension(100, 30));
         inputPanel.add(keyField);
         container.add(inputPanel);
@@ -47,7 +47,7 @@ public class HillCipherPanel extends BaseCipherPanel {
 
     @Override
     protected void resetFields() {
-        keyField.setText("GYBN");
+        keyField.setText("HILL");
     }
 
     private void process(boolean encrypt) {

@@ -28,7 +28,22 @@ public class TrithemeCipherPanel extends BaseCipherPanel {
             outputArea.setText(sb.toString());
         }, true));
 
-        dec.addActionListener(e -> measureAndRun(() -> outputArea.setText("Tritheme Decrypt (Simulated)"), false));
+        dec.addActionListener(e -> measureAndRun(() -> {
+            String text = inputArea.getText().toUpperCase();
+            StringBuilder sb = new StringBuilder();
+            int shift = 0;
+            for (char c : text.toCharArray()) {
+                if (Character.isLetter(c)) {
+                    int val = (c - 'A' - shift);
+                    while (val < 0)
+                        val += 26;
+                    sb.append((char) (val + 'A'));
+                    shift++;
+                } else
+                    sb.append(c);
+            }
+            outputArea.setText(sb.toString());
+        }, false));
 
         p.add(enc);
         p.add(dec);
