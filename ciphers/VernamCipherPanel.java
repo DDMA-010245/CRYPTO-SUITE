@@ -36,8 +36,15 @@ public class VernamCipherPanel extends BaseCipherPanel {
         try {
             String text = getInputText();
             String key = keyField.getText();
-            if (text.length() != key.length())
-                throw new RuntimeException("Key length must equal text length");
+            if (key.isEmpty()) {
+                key = "DEFAULTKEY";
+                keyField.setText(key);
+            }
+            // Auto-repeat key to match length
+            while (key.length() < text.length()) {
+                key += key;
+            }
+            key = key.substring(0, text.length());
             StringBuilder res = new StringBuilder();
             for (int i = 0; i < text.length(); i++)
                 res.append((char) (text.charAt(i) ^ key.charAt(i)));

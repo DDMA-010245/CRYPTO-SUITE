@@ -1,7 +1,9 @@
 package ciphers;
+
 import components.*;
 
 import javax.swing.*;
+import java.awt.Color;
 
 public class BeaufortCipherPanel extends BaseCipherPanel {
     JTextField keyField;
@@ -15,9 +17,12 @@ public class BeaufortCipherPanel extends BaseCipherPanel {
         p.add(new JLabel("<html><font color='white'>Key:</font></html>"));
         keyField = createTextField("KEY");
         p.add(keyField);
-        JButton act = new NeonButton("Encrypt / Decrypt", Theme.ACCENT_COLOR);
-        act.addActionListener(e -> measureAndRun(this::process, true));
-        p.add(act);
+        JButton enc = new NeonButton("Encrypt", Theme.ACCENT_COLOR);
+        JButton dec = new NeonButton("Decrypt", new Color(200, 50, 50));
+        enc.addActionListener(e -> measureAndRun(this::process, true));
+        dec.addActionListener(e -> measureAndRun(this::process, false));
+        p.add(enc);
+        p.add(dec);
     }
 
     @Override
